@@ -18,19 +18,19 @@ scaler_pilihanPertama = joblib.load("model/scaler_first_choice.joblib")
 scaler_tekananFinansial = joblib.load("model/scaler_tekanan_finansal.joblib")
 scaler_totalEvaluation = joblib.load("model/scaler_total_evaluations.joblib")
 
-
+ 
 def data_preprocessing(data):
     """Preprocessing data
-
+ 
     Args:
-        data (Pandas DataFrame): Dataframe that contain all the data to make prediction
-
+        data (Pandas DataFrame): Dataframe that contain all the data to make prediction 
+        
     return:
         Pandas DataFrame: Dataframe that contain all the preprocessed data
     """
     data = data.copy()
     df = pd.DataFrame()
-
+    
 
     data["academic_performance_ratio"] = scaler_academic_performance_ratio.transform(np.asarray(data["academic_performance_ratio"]).reshape(-1,1))[0]
     data["average_grade"] = scaler_averageGrade.transform(np.asarray(data["average_grade"]).reshape(-1,1))[0]
@@ -39,5 +39,5 @@ def data_preprocessing(data):
     data["tekanan_finansal"] = scaler_tekananFinansial.transform(np.asarray(data["tekanan_finansal"]).reshape(-1,1))[0]
     data["total_evaluations"] = scaler_totalEvaluation.transform(np.asarray(data["total_evaluations"]).reshape(-1,1))[0]
 
-
+    
     return df
