@@ -74,3 +74,7 @@ Berdasarkan hasil analisis dan modeling, berikut adalah beberapa rekomendasi act
 
 - Program Bimbingan Akademik Khusus
 Mengimplementasikan program bimbingan akademik khusus bagi siswa yang teridentifikasi memiliki rasio performa akademik rendah di semester awal. Program ini dapat mencakup mentoring, bantuan pengajaran tambahan, dan pemantauan yang lebih dekat oleh tutor.
+
+
+nb: 
+link streamlit masih dengan bug [https://penerapandatascience-submisifinal.streamlit.app/]
