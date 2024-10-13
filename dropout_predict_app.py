@@ -10,7 +10,7 @@ Original file is located at
 import streamlit as st
 import pandas as pd
 import joblib
-from data_preprocessing import data_preprocessing, encoder_Credit_Mix, encoder_Payment_Behaviour, encoder_Payment_of_Min_Amount
+from data_preprocessing import data_preprocessing
 from prediction import prediction
 
 col1, col2 = st.columns([1, 5])
@@ -20,18 +20,17 @@ with col2:
     st.header('Dropout Predictor App (Prototype)')
 
     data = pd.DataFrame()
-
-col1, col2, col3 = st.columns(3)
-
+ 
+# Create three columns to input data
+col1, col2, col3 = st.columns(3)  # Unpack 3 columns
+ 
 with col1:
-    academic_performance_ratio = int(st.number_input(label='academic_performance_ratio', value=0.5))
+    academic_performance_ratio = st.number_input(label='academic_performance_ratio')
     data["academic_performance_ratio"] = academic_performance_ratio
 
 with st.expander("View the Raw Data"):
     st.dataframe(data=data, width=800, height=10)
 
 if st.button('Predict'):
-    new_data = data_preprocessing(data=data)
-    with st.expander("View the Preprocessed Data"):
-        st.dataframe(data=new_data, width=800, height=10)
-    st.write("Dropout Rate Prediction: {}".format(prediction(new_data)))
+
+    st.write("Dropout Rate Prediction: {}".format(prediction(data)))
