@@ -1,7 +1,7 @@
 # Proyek Akhir: Menyelesaikan Permasalahan Perusahaan Edutech
 
 ## Business Understanding
-Jaya Jaya Institut adalah sebuah institusi pendidikan tinggi yang telah berdiri sejak tahun 2000 dan dikenal memiliki reputasi lulusan yang baik. Namun, masalah tingginya angka dropout menjadi tantangan besar bagi institusi tersebut, yang berpotensi mengurangi kepercayaan publik terhadap kualitas pendidikannya. Oleh karena itu, pihak institusi ingin mendeteksi siswa yang berpotensi dropout sedini mungkin, untuk memberikan bimbingan yang lebih personal guna meningkatkan peluang mereka menyelesaikan studi.
+Jaya Jaya Institut adalah sebuah institusi pendidikan tinggi yang telah berdiri sejak tahun 2000 dan dikenal memiliki reputasi lulusan yang baik. Namun, masalah tingginya angka dropout masih menjadi tantangan yang belum mampu diselesaikan bagi Jaya Jaya Institut yang mana akan berpotensi mengurangi kepercayaan publik terhadap kualitas pendidikannya. Maka dari itu, pihak institusi ingin mendeteksi siswa yang berpotensi dropout sedini mungkin, untuk memberikan bimbingan yang lebih personal guna meningkatkan peluang mereka menyelesaikan studi.
 
 ### Permasalahan Bisnis
 1. Jumlah siswa yang dropout tinggi mengindikasikan ada suatu hal negatif memengaruhinya.
