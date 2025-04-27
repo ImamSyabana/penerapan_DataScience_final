@@ -48,6 +48,11 @@ Dataset sudah disediakan dari pihak Jaya Jaya Maju institut sehingga dataset [st
 **2. Mempersiapkan environment project:**
 Memanfaatkan Jupyter Notebook Google Colab untuk dapat menulis dan menjalankan model machine learning atau analisis data secara langsung, memanfaatkan CPU atau GPU yang disediakan secara gratis. Persiapan environment project dengan Google Colabs relatif mudah karena beberapa library yang dibutuhkan sudah terinstal. Untuk library yang belum tersedia di Google Colab, library dapat di-instal dengan perintah pip install.  
 
+Librari yang diperlukan dalam project ini diantaranya sebagai berikut.
+* sqlalchemy: untuk menghubungkan dataframe ke tabel yang ada di database
+* pandas
+* numpy
+
 
 Setup environment:
 * 
