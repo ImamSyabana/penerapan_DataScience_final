@@ -15,8 +15,8 @@ Proyek ini akan mencakup:
 3. Membuat dashboard yang membantu manajemen dalam memahami informasi penting terkait drop rate.
 
 ### Persiapan
-
-Sumber data: Sumber data: Data berasal dari informasi masing-masing pegawai yang dikumpulkan oleh Jaya Maju Institut.
+ 
+Sumber data: Dataset sudah disediakan dari pihak Jaya Jaya Maju institut sehingga dataset [student's performance](https://drive.google.com/drive/folders/1u2GLYrJxST154AbItZBKriXDrL7dHLSP) dapat diakses untuk dianalisa. 
 
 Setup environment:
 * Setup IDE Google Colab untuk dapat menulis dan menjalankan model machine learning atau analisis data langsung di Google Colab, memanfaatkan CPU atau GPU yang disediakan secara gratis
