@@ -1,7 +1,7 @@
 # Proyek Akhir: Menyelesaikan Permasalahan Perusahaan Edutech
 
 ## Business Understanding
-Jaya Jaya Institut adalah sebuah institusi pendidikan tinggi yang telah berdiri sejak tahun 2000 dan dikenal memiliki reputasi lulusan yang baik. Namun, masalah tingginya angka dropout masih menjadi tantangan yang belum mampu diselesaikan bagi Jaya Jaya Institut yang mana akan berpotensi mengurangi kepercayaan publik terhadap kualitas pendidikannya. Maka dari itu, pihak institusi ingin mendeteksi siswa yang berpotensi dropout sedini mungkin, untuk memberikan bimbingan yang lebih personal guna meningkatkan peluang mereka menyelesaikan studi.
+Jaya Jaya Institut adalah sebuah institusi pendidikan tinggi yang telah berdiri sejak tahun 2000 dan dikenal memiliki reputasi lulusan yang baik. Walaupun telah mencetak banyak lulusan dengan reputasi yang sangat baik, masalah tingginya angka dropout masih menjadi tantangan yang belum mampu diselesaikan bagi Jaya Jaya Institut yang mana akan berpotensi mengurangi kepercayaan publik terhadap kualitas pendidikannya. Maka dari itu, pihak institusi ingin mendeteksi siswa yang berpotensi dropout sedini mungkin, untuk memberikan bimbingan yang lebih personal guna meningkatkan peluang mereka menyelesaikan studi.
 
 ### Permasalahan Bisnis
 1. Jumlah siswa yang dropout tinggi mengindikasikan ada suatu hal negatif memengaruhinya.
@@ -16,10 +16,10 @@ Proyek ini akan mencakup:
 
 ### Persiapan
  
-Sumber data: Dataset sudah disediakan dari pihak Jaya Jaya Maju institut sehingga dataset [student's performance](https://drive.google.com/drive/folders/1u2GLYrJxST154AbItZBKriXDrL7dHLSP) dapat diakses untuk dianalisa. 
+Sumber data: Dataset sudah disediakan dari pihak Jaya Jaya Maju institut sehingga dataset [student's performance](https://drive.google.com/drive/folders/1u2GLYrJxST154AbItZBKriXDrL7dHLSP) dapat diakses untuk dianalisa. Dataset tersebut tersusun setelah mengumpulkan beberapa database dari institusi perguruan tinggi. Database-database tersebut berhubungan dengan data mahasiswa-mahasiswa yang mengikuti program sarjana seperti program studi agronomi, desain, edukasi, perawatan, jurnalis, manajemen, layanan sosial, dan teknologi. dataset berisi catatan informasi masing-masing mahasiswa selama mereka berkuliah, seperti jalur akademik, demografi, faktor sosial ekonomi, dan juga performa akademik mahasiswa pada akhir periode semester pertama dan kedua.  
 
 Setup environment:
-* Setup IDE Google Colab untuk dapat menulis dan menjalankan model machine learning atau analisis data langsung di Google Colab, memanfaatkan CPU atau GPU yang disediakan secara gratis
+* Setup IDE Google Colab untuk dapat menulis dan menjalankan model machine learning atau analisis data langsung di Google Colab, memanfaatkan CPU atau GPU yang disediakan secara gratis.
 
 1. Akses Google Colab: Membuka Google Colab lewat browser.
 2. Dataset hasil analisis faktor-faktor yang memengaruhi attrition rate menggunakan Google Colab dapat diunggah ke database management tool PostgreSQL menggunakan supabase untuk nantinya bisa digunakan untuk membuat dashboard menggunakan metabase.
