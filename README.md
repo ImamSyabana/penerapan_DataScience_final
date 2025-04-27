@@ -36,9 +36,9 @@ faktor-faktor yang kemungkinan memengaruhi performa akademik mahasiswa adalah se
    
 
 ### Cakupan Proyek
-1. Mengidentifikasi variabel-variabel yang menjadi penyebab dropout mahasiswa setelah melakukan analisis data yang berisi hubungan antara data akademik mahasiswa dengan performa akademik mahasiswa.
-2. Menganalisis data yang dimiliki untuk memahami pola dan tren drop rate yang meningkat.
-3. Membuat dashboard yang membantu manajemen Jaya Jaya Institut dalam memahami informasi penting tentang faktor-faktor yang berkaitan dengan droprate mahasiswa.
+1. Mencari variabel yang paling berdampak terhadap peningkatan persentase dropout mahasiswa setelah melakukan analisis data yang berisi hubungan antara data akademik mahasiswa dengan performa akademik mahasiswa.
+2. Melakukan penarikan kesimpulan dari hasil analisi data untuk bisa menentukan langkah tepat yang perlu diambil Jaya Jaya Institu untuk mencegah penurunan performa akademik mahasiswa.
+3. Membuat dashboard untuk memvisualisasikan informasi penting tentang variabel yang berkaitan dengan droprate mahasiswa untuk membantu Jaya Jaya Institut memahami hasil analisis.
 4. Membuat model machine learning sebagai solusi untuk memecahkan masalah tingginya dropout rate mahasiswa dengan cara memberikan input berupa data akademik mahasiswa ke model machine learning lalu model tersebut dapat mengklasifikasikan mahasiswa ke dalam kategori performa akademik yang normal atau buruk yang berpotensi dropout. 
 
 ### Persiapan
