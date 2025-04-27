@@ -1,18 +1,20 @@
 # Proyek Akhir: Menyelesaikan Permasalahan Perusahaan Edutech
 
 ## Business Understanding
-Jaya Jaya Institut adalah sebuah institusi pendidikan tinggi yang telah berdiri sejak tahun 2000 dan dikenal memiliki reputasi lulusan yang baik. Walaupun telah mencetak banyak lulusan dengan reputasi yang sangat baik, masalah tingginya angka dropout masih menjadi tantangan yang belum mampu diselesaikan bagi Jaya Jaya Institut yang mana akan berpotensi mengurangi kepercayaan publik terhadap kualitas pendidikannya. Maka dari itu, pihak institusi ingin mendeteksi siswa yang berpotensi dropout sedini mungkin, untuk memberikan bimbingan yang lebih personal guna meningkatkan peluang mereka menyelesaikan studi.
+Jaya Jaya Institut adalah sebuah institusi pendidikan tinggi yang telah berdiri sejak tahun 2000 dan dikenal memiliki reputasi lulusan yang baik. Walaupun telah mencetak banyak lulusan dengan reputasi yang sangat baik, masalah tingginya angka dropout masih menjadi tantangan yang belum mampu diselesaikan bagi Jaya Jaya Institut yang mana akan berpotensi mengurangi kepercayaan publik terhadap kualitas pendidikannya. Maka dari itu, pihak institusi ingin mendeteksi siswa yang berpotensi dropout sedini mungkin, untuk memberikan bimbingan yang lebih personal guna meningkatkan peluang mereka menyelesaikan studi.  Untuk merealisasikan tujuan tersebut institusi berencana untuk membuat dashboard yang memudahkan dalam membaca faktor-faktor yang memengaruhi performa masing-masing mahasiswa dan membuat model yang mampu mengklasifikasikan mahasiswa yang berpotensi dropout sehingga institusi dapat memberikan perlakuan yang khusus kepada mahasiswa yang berpotensi dropout secara tepat sasaran. 
 
 ### Permasalahan Bisnis
-1. Jumlah siswa yang dropout tinggi mengindikasikan ada suatu hal negatif memengaruhinya.
-2. Tidak adanya sistem prediksi dini untuk mengidentifikasi siswa yang berpotensi dropout.
-3. Institusi ingin memahami faktor-faktor penyebab dropout untuk menargetkan intervensi yang tepat.
+1. Terdapat nilai persentase dropout yang tinggi pada mahasiswa Jaya Jaya Institut mengindikasikan terdapat faktor negatif yang memengaruhinya.
+2. Faktor-faktor penyebab dropout perlu diketahui oleh institusi secepatnya untuk menargetkan intervensi yang tepat demi menyelesaikan permasalahan dropout rate yang tinggi.
+3. Tidak adanya sistem prediksi dini untuk mengidentifikasi siswa yang berpotensi dropout.
+   
 
 ### Cakupan Proyek
 Proyek ini akan mencakup:
 1. Mengidentifikasi variabel-variabel yang paling memengaruhi siswa yang dropout.
 2. Menganalisis data yang dimiliki untuk memahami pola dan tren drop rate yang meningkat.
 3. Membuat dashboard yang membantu manajemen dalam memahami informasi penting terkait drop rate.
+4. Membuat model machine learning sebagai solusi untuk meme
 
 ### Persiapan
  
