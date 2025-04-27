@@ -42,11 +42,11 @@ faktor-faktor yang kemungkinan memengaruhi performa akademik mahasiswa adalah se
 4. Membuat model machine learning sebagai solusi untuk memecahkan masalah tingginya dropout rate mahasiswa dengan cara memberikan input berupa data akademik mahasiswa ke model machine learning lalu model tersebut dapat mengklasifikasikan mahasiswa ke dalam kategori performa akademik yang normal atau buruk yang berpotensi dropout. 
 
 ### Persiapan
-Sumber data:
-1. Dataset sudah disediakan dari pihak Jaya Jaya Maju institut sehingga dataset [student's performance](https://drive.google.com/drive/folders/1u2GLYrJxST154AbItZBKriXDrL7dHLSP) dapat diakses untuk dianalisa. Dataset tersebut tersusun setelah mengumpulkan beberapa database dari institusi perguruan tinggi. Database-database tersebut berhubungan dengan data mahasiswa-mahasiswa yang mengikuti program sarjana seperti program studi agronomi, desain, edukasi, perawatan, jurnalis, manajemen, layanan sosial, dan teknologi. dataset berisi catatan informasi masing-masing mahasiswa selama mereka berkuliah, seperti jalur akademik, demografi, faktor sosial ekonomi, dan juga performa akademik mahasiswa pada akhir periode semester pertama dan kedua.
+**1. Sumber data:**
+Dataset sudah disediakan dari pihak Jaya Jaya Maju institut sehingga dataset [student's performance](https://drive.google.com/drive/folders/1u2GLYrJxST154AbItZBKriXDrL7dHLSP) dapat diakses untuk dianalisa. Dataset tersebut tersusun setelah mengumpulkan beberapa database dari institusi perguruan tinggi. Database-database tersebut berhubungan dengan data mahasiswa-mahasiswa yang mengikuti program sarjana seperti program studi agronomi, desain, edukasi, perawatan, jurnalis, manajemen, layanan sosial, dan teknologi. dataset berisi catatan informasi masing-masing mahasiswa selama mereka berkuliah, seperti jalur akademik, demografi, faktor sosial ekonomi, dan juga performa akademik mahasiswa pada akhir periode semester pertama dan kedua.
 
-Mempersiapkan environment project
-2. Memanfaatkan Jupyter Notebook Google Colab untuk dapat menulis dan menjalankan model machine learning atau analisis data secara langsung, memanfaatkan CPU atau GPU yang disediakan secara gratis. Persiapan environment project dengan Google Colabs relatif mudah karena beberapa library yang dibutuhkan sudah terinstal. Untuk library yang belum tersedia di Google Colab, library dapat di-instal dengan perintah pip install.  
+**2. Mempersiapkan environment project:**
+Memanfaatkan Jupyter Notebook Google Colab untuk dapat menulis dan menjalankan model machine learning atau analisis data secara langsung, memanfaatkan CPU atau GPU yang disediakan secara gratis. Persiapan environment project dengan Google Colabs relatif mudah karena beberapa library yang dibutuhkan sudah terinstal. Untuk library yang belum tersedia di Google Colab, library dapat di-instal dengan perintah pip install.  
 
 
 Setup environment:
