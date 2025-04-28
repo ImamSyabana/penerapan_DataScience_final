@@ -19,6 +19,7 @@ faktor-faktor yang kemungkinan memengaruhi performa akademik mahasiswa adalah se
 * Admission grade: nilai kualifikasi admisi
 * Displaced: pelajar yang tidak berdomisili di daerah asal
 * Educational special needs: parameter penentu kebutuhan khusus akan pendidikan
+* Debtor: apakah mahasiswa pemiliik hutang.
 * Tuition fees up to date: parameter ketertiban pembayaran iuran
 * Gender: jenis kelamin
 * Scholarship holder: parameter pemegang beasiswa
@@ -28,6 +29,18 @@ faktor-faktor yang kemungkinan memengaruhi performa akademik mahasiswa adalah se
 * Curricular units 1st sem (enrolled): jumlah unit yang dihadiri mahasiswa di semester 1
 * Curricular units 1st sem (evaluations): jumlah unit yang perlu dievaluasi mahasiswa di semester 1
 * Curricular units 1st sem (approved): jumlah unit yang berhasil diluluskan oleh mahasiswa di semester 1
+* Curricular_units_1st_sem_grade: nilai dari unit pada semester 1
+* Curricular_units_2nd_sem_without_evaluations: jumlah unit pada semester 2 yang lulus tanpa evaluasi
+* Curricular units 2nd sem (credited): jumlah unit yang di kreditkan mahasiswa di semester 2  
+* Curricular units 2nd sem (enrolled): jumlah unit yang dihadiri mahasiswa di semester 2
+* Curricular units 2nd sem (evaluations): jumlah unit yang perlu dievaluasi mahasiswa di semester 2
+* Curricular units 2nd sem (approved): jumlah unit yang berhasil diluluskan oleh mahasiswa di semester 2
+* Curricular_units_2nd_sem_grade: nilai dari unit pada semester 2
+* Curricular_units_2nd_sem_without_evaluations: jumlah unit pada semester 2 yang lulus tanpa evaluasi
+* unemployment_rate: tingkat pengangguran
+* inflation rate: persentase inflasi
+* GDP: pendapatan perkapita
+* status: parameter yang menyatakan kelulusan atau dropout mahasiswa.
   
 ### Permasalahan Bisnis
 1. Terdapat nilai persentase dropout yang tinggi pada mahasiswa Jaya Jaya Institut mengindikasikan terdapat faktor negatif yang memengaruhinya.
