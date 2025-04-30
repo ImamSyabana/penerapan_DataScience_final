@@ -14,38 +14,10 @@ with col2:
     st.header('Student Drop Rate Predictor App')
     
 data = pd.DataFrame()
- 
-#######################################################
-col1, col2 = st.columns(2)
 
-from data_preprocessing import encoder_Marital_status
+Marital_status_list =  ['single', 'married', 'widower', 'divorced', 'facto union', 'legally separated']
 
-with col1:
-    st.markdown("Select your marital status from the options below.")
-    Marital_status = st.selectbox(label='Marital_status', options=encoder_Marital_status.classes_, index=0)
-    data["Marital_status"] = [Marital_status]
-    
-with col2:
-    st.markdown("#### Marital Status Description")
-    legends = ['single', 'married', 'widower', 'divorced', 'facto union', 'legally separated']
-    legend_text = ""
-    for idx, label in enumerate(encoder_Marital_status.classes_):
-        legend_text += f"- **{label}**: {legends[idx]}\n"
-    st.markdown(legend_text)
-
-#######################################################
-col1, col2 = st.columns(2)
-
-from data_preprocessing import encoder_Application_mode
-
-with col1:
-    st.markdown("Select your Application mode from the options below.")
-    Application_mode = st.selectbox(label='Application_mode', options=encoder_Application_mode.classes_, index=0)
-    data["Application_mode"] = [Application_mode]
-    
-with col2:
-    st.markdown("#### Application Mode Description")
-    legends = [
+Application_mode_list = [
         " 1st phase - general contingent",
         " Ordinance No. 612/93",
         " 1st phase - special contingent (Azores Island)",
@@ -65,25 +37,8 @@ with col2:
         " Short cycle diploma holders ",
         " Change of institution/course (International)"
     ]
-    legend_text = ""
-    for idx, label in enumerate(encoder_Application_mode.classes_):
-        legend_text += f"- **{label}**: {legends[idx]}\n"
-    st.markdown(legend_text)
-    
 
-#######################################################
-col1, col2 = st.columns(2)
-
-from data_preprocessing import encoder_Course
-
-with col1:
-    st.markdown("Select Course from the options below.")
-    Course = st.selectbox(label='Course', options=encoder_Course.classes_, index=0)
-    data["Course"] = [Course]
-    
-with col2:
-    st.markdown("#### Course Description")
-    legends = [
+Course_list = [
         "Biofuel Production Technologies ",
         "Animation and Multimedia Design ",
         "Social Service (evening attendance) ",
@@ -102,115 +57,19 @@ with col2:
         "Basic Education ",
         "Management (evening attendance)"
     ]
-    
-    legend_text = ""
-    for idx, label in enumerate(encoder_Course.classes_):
-        legend_text += f"- **{label}**: {legends[idx]}\n"
-    st.markdown(legend_text)
-    
-#######################################################
-col1, col2 = st.columns(2)
 
-from data_preprocessing import encoder_Daytime_evening_attendance
-
-with col1:
-    st.markdown("Select Daytime from the options below.")
-    Daytime_evening_attendance = st.selectbox(label='Daytime_evening_attendance', options=encoder_Daytime_evening_attendance.classes_, index=0)
-    data["Daytime_evening_attendance"] = [Daytime_evening_attendance]
-    
-with col2:
-    st.markdown("#### Daytime_evening_attendance Description")
-    legends = [
+Daytime_evening_attendance_list = [
         "evening",
         "daytime"
     ]
-    
-    legend_text = ""
-    for idx, label in enumerate(encoder_Daytime_evening_attendance.classes_):
-        legend_text += f"- **{label}**: {legends[idx]}\n"
-    st.markdown(legend_text)
-    
 
-#######################################################
-col1, col2 = st.columns(2)
+Debtor_list = ["no","yes"]
 
-from data_preprocessing import encoder_Debtor
+Displaced_list = ["no","yes"]
 
-with col1:
-    st.markdown("Select Debtor parameter from the options below.")
-    Debtor = st.selectbox(label='Debtor', options=encoder_Debtor.classes_, index=0)
-    data["Debtor"] = [Debtor]
-    
-with col2:
-    st.markdown("#### Debtor Parameter Description")
-    legends = [
-        "no",
-        "yes"
-    ]
-    
-    legend_text = ""
-    for idx, label in enumerate(encoder_Debtor.classes_):
-        legend_text += f"- **{label}**: {legends[idx]}\n"
-    st.markdown(legend_text)
-    
-    
-#######################################################
-col1, col2 = st.columns(2)
+Educational_special_needs_list=["no","yes"]
 
-from data_preprocessing import encoder_Displaced
-
-with col1:
-    st.markdown("Select Displaced parameter from the options below.")
-    Displaced = st.selectbox(label='Displaced', options=encoder_Displaced.classes_, index=0)
-    data["Displaced"] = [Displaced]
-    
-with col2:
-    st.markdown("#### Displaced Parameter Description")
-    legends = [
-        "no",
-        "yes"
-    ]
-    
-    legend_text = ""
-    for idx, label in enumerate(encoder_Displaced.classes_):
-        legend_text += f"- **{label}**: {legends[idx]}\n"
-    st.markdown(legend_text)
-    
-#######################################################
-col1, col2 = st.columns(2)
-
-from data_preprocessing import encoder_Educational_special_needs
-
-with col1:
-    st.markdown("Select Educational_special_needs parameter from the options below.")
-    Educational_special_needs = st.selectbox(label='Educational_special_needs', options=encoder_Educational_special_needs.classes_, index=0)
-    data["Educational_special_needs"] = [Educational_special_needs]
-    
-with col2:
-    st.markdown("#### Educational_special_needs Parameter Description")
-    legends = [
-        "no",
-        "yes"
-    ]
-    
-    legend_text = ""
-    for idx, label in enumerate(encoder_Educational_special_needs.classes_):
-        legend_text += f"- **{label}**: {legends[idx]}\n"
-    st.markdown(legend_text)
-    
-#######################################################
-col1, col2 = st.columns(2)
-
-from data_preprocessing import encoder_Fathers_occupation
-
-with col1:
-    st.markdown("Select Fathers_occupation from the options below.")
-    Fathers_occupation = st.selectbox(label='Fathers_occupation', options=encoder_Fathers_occupation.classes_, index=0)
-    data["Fathers_occupation"] = [Fathers_occupation]
-    
-with col2:
-    st.markdown("#### Fathers_occupation Parameter Description")
-    legends = [
+Fathers_occupation_list = [
         "Student ",
         "Representatives of the Legislative Power and Executive Bodies, Directors, Directors and Executive Managers ",
         "Specialists in Intellectual and Scientific Activities ",
@@ -258,25 +117,8 @@ with col2:
         " Meal preparation assistants ",
         " Street vendors (except food) and street service providers"
     ]
-    
-    legend_text = ""
-    for idx, label in enumerate(encoder_Fathers_occupation.classes_):
-        legend_text += f"- **{label}**: {legends[idx]}\n"
-    st.markdown(legend_text)
-    
-#######################################################
-col1, col2 = st.columns(2)
 
-from data_preprocessing import encoder_Fathers_qualification
-
-with col1:
-    st.markdown("Select Fathers_qualification from the options below.")
-    Fathers_qualification = st.selectbox(label='Fathers_qualification', options=encoder_Fathers_qualification.classes_, index=0)
-    data["Fathers_qualification"] = [Fathers_qualification]
-    
-with col2:
-    st.markdown("#### Fathers_qualification Parameter Description")
-    legends = [
+Fathers_qualification_list =[
         "Secondary Education - 12th Year of Schooling or Eq. ",
         "Higher Education - Bachelor's Degree ",
         "Higher Education - Degree ",
@@ -312,69 +154,15 @@ with col2:
         "Higher Education - Master (2nd cycle) ",
         "Higher Education - Doctorate (3rd cycle)"
     ]
-    
-    legend_text = ""
-    for idx, label in enumerate(encoder_Fathers_qualification.classes_):
-        legend_text += f"- **{label}**: {legends[idx]}\n"
-    st.markdown(legend_text)
-    
-#######################################################
-col1, col2 = st.columns(2)
 
-from data_preprocessing import encoder_Gender
-
-with col1:
-    st.markdown("Select gender from the options below.")
-    Gender = st.selectbox(label='Gender', options=encoder_Gender.classes_, index=0)
-    data["Gender"] = [Gender]
-    
-with col2:
-    st.markdown("#### Gender Parameter Description")
-    legends = [
+Gender_list = [
         "female",
         "male"
     ]
-    
-    legend_text = ""
-    for idx, label in enumerate(encoder_Gender.classes_):
-        legend_text += f"- **{label}**: {legends[idx]}\n"
-    st.markdown(legend_text)
-    
-#######################################################
-col1, col2 = st.columns(2)
 
-from data_preprocessing import encoder_International
+International_list = ["no","yes"]
 
-with col1:
-    st.markdown("Select International student parameter from the options below.")
-    International = st.selectbox(label='International', options=encoder_International.classes_, index=0)
-    data["International"] = [International]
-    
-with col2:
-    st.markdown("#### International Student Parameter Description")
-    legends = [
-        "no",
-        "yes"
-    ]
-    
-    legend_text = ""
-    for idx, label in enumerate(encoder_International.classes_):
-        legend_text += f"- **{label}**: {legends[idx]}\n"
-    st.markdown(legend_text)
-    
-#######################################################
-col1, col2 = st.columns(2)
-
-from data_preprocessing import encoder_Mothers_occupation
-
-with col1:
-    st.markdown("Select Mothers_occupation from the options below.")
-    Mothers_occupation = st.selectbox(label='Mothers_occupation', options=encoder_Mothers_occupation.classes_, index=0)
-    data["Mothers_occupation"] = [Mothers_occupation]
-    
-with col2:
-    st.markdown("#### Mothers_occupation Parameter Description")
-    legends = [
+Mothers_occupation_list = [
         "Student ",
         "Representatives of the Legislative Power and Executive Bodies, Directors, Directors and Executive Managers ",
         "Specialists in Intellectual and Scientific Activities ",
@@ -423,24 +211,7 @@ with col2:
         " Street vendors (except food) and street service providers"
     ]
     
-    legend_text = ""
-    for idx, label in enumerate(encoder_Mothers_occupation.classes_):
-        legend_text += f"- **{label}**: {legends[idx]}\n"
-    st.markdown(legend_text)
-    
-#######################################################
-col1, col2 = st.columns(2)
-
-from data_preprocessing import encoder_Mothers_qualification
-
-with col1:
-    st.markdown("Select Mothers_qualification from the options below.")
-    Mothers_qualification = st.selectbox(label='Mothers_qualification', options=encoder_Mothers_qualification.classes_, index=0)
-    data["Mothers_qualification"] = [Mothers_qualification]
-    
-with col2:
-    st.markdown("#### Mothers_qualification Parameter Description")
-    legends = [
+Mothers_qualification_list =[
         "Secondary Education - 12th Year of Schooling or Eq. ",
         "Higher Education - Bachelor's Degree ",
         "Higher Education - Degree ",
@@ -476,26 +247,8 @@ with col2:
         "Higher Education - Master (2nd cycle) ",
         "Higher Education - Doctorate (3rd cycle)"
     ]
-    
-    legend_text = ""
-    for idx, label in enumerate(encoder_Mothers_qualification.classes_):
-        legend_text += f"- **{label}**: {legends[idx]}\n"
-    st.markdown(legend_text)
-    
 
-#######################################################
-col1, col2 = st.columns(2)
-
-from data_preprocessing import encoder_Nationality
-
-with col1:
-    st.markdown("Select Nationality from the options below.")
-    Nationality = st.selectbox(label='Nationality', options=encoder_Nationality.classes_, index=0)
-    data["Nationality"] = [Nationality]
-    
-with col2:
-    st.markdown("#### Nationality Parameter Description")
-    legends = [
+Nationality_list = [
       "Portuguese ",
       "German ",
       "Spanish ",
@@ -518,25 +271,8 @@ with col2:
       "Cuban ",
       "Colombin",
     ]
-    
-    legend_text = ""
-    for idx, label in enumerate(encoder_Nationality.classes_):
-        legend_text += f"- **{label}**: {legends[idx]}\n"
-    st.markdown(legend_text)
-    
-#######################################################
-col1, col2 = st.columns(2)
 
-from data_preprocessing import encoder_Previous_qualification
-
-with col1:
-    st.markdown("Select Previous_qualification from the options below.")
-    Previous_qualification = st.selectbox(label='Previous_qualification', options=encoder_Previous_qualification.classes_, index=0)
-    data["Previous_qualification"] = [Previous_qualification]
-    
-with col2:
-    st.markdown("#### Previous_qualification Parameter Description")
-    legends = [
+Previous_qualification_list =[
       "Secondary education ",
       "Higher education - bachelor's degree ",
       "Higher education - degree ",
@@ -555,61 +291,33 @@ with col2:
       "Professional higher technical course ",
       "Higher education - master (2nd cycle)"
     ]
-    
-    legend_text = ""
-    for idx, label in enumerate(encoder_Previous_qualification.classes_):
-        legend_text += f"- **{label}**: {legends[idx]}\n"
-    st.markdown(legend_text)
-    
-    
-#######################################################
-# col1, col2 = st.columns(2)
 
-# from data_preprocessing import encoder_Scholarship_holder
+Scholarship_holder_list = ["no","yes"]
+Tuition_fees_up_to_date_list =["no","yes"]
 
-# with col1:
-#     st.markdown("Select Scholarship_holder from the options below.")
-#     Scholarship_holder = st.selectbox(label='Scholarship_holder', options=encoder_Scholarship_holder.classes_, index=0)
-#     data["Scholarship_holder"] = [Scholarship_holder]
-    
-# with col2:
-#     st.markdown("#### Scholarship_holder Parameter Description")
-#     legends = [
-#       "no",
-#       "yes"
-#     ]
-    
-#     legend_text = ""
-#     for idx, label in enumerate(encoder_Scholarship_holder.classes_):
-#         legend_text += f"- **{label}**: {legends[idx]}\n"
-#     st.markdown(legend_text)
-    
-#######################################################
-# col1, col2 = st.columns(2)
-
-# from data_preprocessing import encoder_Tuition_fees_up_to_date
-
-# with col1:
-#     st.markdown("Select Tuition_fees_up_to_date from the options below.")
-#     Tuition_fees_up_to_date = st.selectbox(label='Tuition_fees_up_to_date', options=encoder_Tuition_fees_up_to_date.classes_, index=0)
-#     data["Tuition_fees_up_to_date"] = [Tuition_fees_up_to_date]
-    
-# with col2:
-#     st.markdown("#### Tuition_fees_up_to_date Parameter Description")
-#     legends = [
-#       "no",
-#       "yes"
-#     ]
-    
-#     legend_text = ""
-#     for idx, label in enumerate(encoder_Tuition_fees_up_to_date.classes_):
-#         legend_text += f"- **{label}**: {legends[idx]}\n"
-#     st.markdown(legend_text)
-    
-# #######################################################
-#######################################################
+legendsDictionary = {
+    "Marital_status" : Marital_status_list,
+    "Application_mode" : Application_mode_list,
+    "Course" : Course_list,
+    "Daytime_evening_attendance" : Daytime_evening_attendance_list,
+    "Debtor" : Debtor_list,
+    "Displaced" : Displaced_list,
+    "Educational_special_needs" : Educational_special_needs_list,
+    "Fathers_occupation" : Fathers_occupation_list,
+    "Fathers_qualification" : Fathers_qualification_list,
+    "Gender" : Gender_list,
+    "International" : International_list,
+    "Mothers_occupation" : Mothers_occupation_list,
+    "Mothers_qualification" : Mothers_qualification_list,
+    "Nationality" : Nationality_list,
+    'Previous_qualification':Previous_qualification_list,
+    "Scholarship_holder": Scholarship_holder_list,
+    "Tuition_fees_up_to_date": Tuition_fees_up_to_date_list
+}
 
 
+
+# Fungsi yang dah jadi
 
 def streamlit_categorical_col_builder(encoder_name, data, legendsArray):
     col1, col2 = st.columns(2)
@@ -635,14 +343,12 @@ def streamlit_categorical_col_builder(encoder_name, data, legendsArray):
     
     return data
 
-streamlit_categorical_col_builder(
-    encoder_name= "encoder_Scholarship_holder",
-    data = data,
-    legendsArray= ["no", "yes"],
-)
+# Loop fungsi streamlit builder untuk categorical
 
-streamlit_categorical_col_builder(
-    encoder_name= "encoder_Tuition_fees_up_to_date",
-    data = data,
-    legendsArray= ["no", "yes"],
-)
+for key in legendsDictionary.keys():
+    streamlit_categorical_col_builder(
+        encoder_name= f"encoder_{key}",
+        data = data,
+        legendsArray= legendsDictionary[key],
+    )
+
