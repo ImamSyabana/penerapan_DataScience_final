@@ -563,26 +563,26 @@ with col2:
     
     
 #######################################################
-# col1, col2 = st.columns(2)
+col1, col2 = st.columns(2)
 
-# from data_preprocessing import encoder_Scholarship_holder
+from data_preprocessing import encoder_Scholarship_holder
 
-# with col1:
-#     st.markdown("Select Scholarship_holder from the options below.")
-#     Scholarship_holder = st.selectbox(label='Scholarship_holder', options=encoder_Scholarship_holder.classes_, index=0)
-#     data["Scholarship_holder"] = [Scholarship_holder]
+with col1:
+    st.markdown("Select Scholarship_holder from the options below.")
+    Scholarship_holder = st.selectbox(label='Scholarship_holder', options=encoder_Scholarship_holder.classes_, index=0)
+    data["Scholarship_holder"] = [Scholarship_holder]
     
-# with col2:
-#     st.markdown("#### Scholarship_holder Parameter Description")
-#     legends = [
-#       "no",
-#       "yes"
-#     ]
+with col2:
+    st.markdown("#### Scholarship_holder Parameter Description")
+    legends = [
+      "no",
+      "yes"
+    ]
     
-#     legend_text = ""
-#     for idx, label in enumerate(encoder_Scholarship_holder.classes_):
-#         legend_text += f"- **{label}**: {legends[idx]}\n"
-#     st.markdown(legend_text)
+    legend_text = ""
+    for idx, label in enumerate(encoder_Scholarship_holder.classes_):
+        legend_text += f"- **{label}**: {legends[idx]}\n"
+    st.markdown(legend_text)
     
 #######################################################
 # col1, col2 = st.columns(2)
@@ -611,8 +611,8 @@ with col2:
 
 
 
-def streamlit_categorical_col_builder(encoder_name, data, legendsArray):
-    col1, col2 = st.columns(2)
+def streamlit_categorical_col_builder(encoder_name, data, legendsArray, col1,col2):
+    
     module = importlib.import_module("data_preprocessing")
     encoder = getattr(module, encoder_name)
     
@@ -635,14 +635,11 @@ def streamlit_categorical_col_builder(encoder_name, data, legendsArray):
     
     return data
 
-streamlit_categorical_col_builder(
-    encoder_name= "encoder_Scholarship_holder",
-    data = data,
-    legendsArray= ["no", "yes"],
-)
 
 streamlit_categorical_col_builder(
     encoder_name= "encoder_Tuition_fees_up_to_date",
     data = data,
     legendsArray= ["no", "yes"],
+    col1 = col1,
+    col2 = col2
 )

@@ -12,6 +12,7 @@ def prediction(data):
     Returns:
         str: Prediction result ("Dropout", "Enrolled", "Graduate")
     """
+    
     result = rdf_model.predict(data)
     final_result = encoder_Status.inverse_transform(result)[0]
     return final_result

@@ -49,7 +49,7 @@ scaler_Unemployment_rate= joblib.load("models\scaler_Unemployment_rate.joblib")
 
 
 # Fungsi untuk data preprocessing
-def data_preprocessing(data):
+def input_df_builder(data):
     """Preprocessing data
  
     Args:
