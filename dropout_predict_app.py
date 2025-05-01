@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
 from data_preprocessing import input_df_builder
 import data_preprocessing
 from prediction import prediction
