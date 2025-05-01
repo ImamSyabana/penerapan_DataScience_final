@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 # load model RDF yang telah dibuat
-rdf_model = joblib.load("models\\rdf_model.joblib")
+#rdf_model = joblib.load("models\\rdf_model.joblib")
 
 # Load semua encoder dan scaler 
 encoder_Application_mode= joblib.load("models\encoder_Application_mode.joblib")
