@@ -352,3 +352,224 @@ for key in legendsDictionary.keys():
         legendsArray= legendsDictionary[key],
     )
 
+############################################################################
+
+integerCols_variabel = [
+
+    "Age_at_enrollment", 
+    "Curricular_units_1st_sem_credited", 
+    "Curricular_units_1st_sem_enrolled",
+    "Curricular_units_1st_sem_evaluations",
+    "Curricular_units_1st_sem_approved",
+    
+    "Curricular_units_1st_sem_without_evaluations",
+    "Curricular_units_2nd_sem_credited", 
+    "Curricular_units_2nd_sem_enrolled",
+    "Curricular_units_2nd_sem_evaluations",
+    "Curricular_units_2nd_sem_approved",
+    
+    "Curricular_units_2nd_sem_without_evaluations",
+]
+
+Curr_grade = [
+    "Curricular_units_1st_sem_grade",
+    "Curricular_units_2nd_sem_grade"
+]
+
+gradeCols_variabel = [
+    "Previous_qualification_grade",
+    "Admission_grade", 
+]
+
+applyOrder = [
+    "Application_order",
+]
+
+
+percentCols_variabel = [
+    "Unemployment_rate",
+    "Inflation_rate", 
+    
+]
+
+continous_variabel = [
+    "GDP" 
+]
+
+    
+######################################################################################
+def streamlit_ApplicationOrder_col_builder(scaler_name, data):
+    col1, col2 = st.columns(2)
+    module = importlib.import_module("data_preprocessing")
+    scaler = getattr(module, scaler_name)
+    
+    label = scaler_name.replace("scaler_", "")
+    
+    
+    with col1:
+        st.markdown("")
+        inputedValue = st.number_input(f"\nEnter {label}", step = 1, min_value=0, max_value=9, format = "%d")
+        data[label] = [inputedValue]
+        
+    with col2:
+        st.markdown(f"#### {label} Parameter Description")
+        st.markdown("Application order (between 0 - first choice; and 9 last choice)")
+    
+    return data
+
+streamlit_ApplicationOrder_col_builder(
+    scaler_name= f"scaler_{applyOrder[0]}",
+    data = data
+)
+######################################################################################
+
+######################################################################################
+def streamlit_grade_col_builder(scaler_name, data):
+    col1, col2 = st.columns(2)
+    module = importlib.import_module("data_preprocessing")
+    encoder = getattr(module, scaler_name)
+    
+    label = scaler_name.replace("scaler_", "")
+    
+    
+    with col1:
+        st.markdown("")
+        inputedValue = st.number_input(f"\nEnter {label}", step = 0.1, min_value=0.0, max_value=200.0, format = "%.1f")
+        data[label] = [inputedValue]
+        
+    with col2:
+        st.markdown(f"#### {label} Parameter Description")
+        st.markdown("Grades Value Range between 0 and 200")
+    
+    return data
+
+for x in range(len(gradeCols_variabel)):
+    streamlit_grade_col_builder(
+        scaler_name= f"scaler_{gradeCols_variabel[x]}",
+        data = data
+    )
+######################################################################################
+
+######################################################################################
+
+def streamlit_integerCols_builder(scaler_name, data):
+    col1, col2 = st.columns(2)
+    module = importlib.import_module("data_preprocessing")
+    encoder = getattr(module, scaler_name)
+    
+    label = scaler_name.replace("scaler_", "")
+    
+    
+    with col1:
+        st.markdown("")
+        inputedValue = st.number_input(f"\nEnter {label}", step =1, format = "%d")
+        data[label] = [inputedValue]
+        
+    with col2:
+        st.markdown(f"#### {label} Parameter Description")
+        st.markdown("Put the value in integer.")
+    
+    return data
+
+for x in range(len(integerCols_variabel)):
+    streamlit_integerCols_builder(
+        scaler_name= f"scaler_{integerCols_variabel[x]}",
+        data = data
+    )
+    
+######################################################################################
+
+######################################################################################
+def streamlit_Curr_col_builder(scaler_name, data):
+    col1, col2 = st.columns(2)
+    module = importlib.import_module("data_preprocessing")
+    encoder = getattr(module, scaler_name)
+    
+    label = scaler_name.replace("scaler_", "")
+    
+    
+    with col1:
+        st.markdown("")
+        inputedValue = st.number_input(f"\nEnter {label}", step = 1, min_value=0, max_value=20, format = "%d")
+        data[label] = [inputedValue]
+        
+    with col2:
+        st.markdown(f"#### {label} Parameter Description")
+        st.markdown("Curricular Units Grades Value Range between 0 and 20")
+    
+    return data
+
+for x in range(len(Curr_grade)):
+    streamlit_Curr_col_builder(
+        scaler_name= f"scaler_{Curr_grade[x]}",
+        data = data
+    )
+######################################################################################
+
+
+
+def streamlit_percent_builder(scaler_name, data):
+    col1, col2 = st.columns(2)
+    module = importlib.import_module("data_preprocessing")
+    encoder = getattr(module, scaler_name)
+    
+    label = scaler_name.replace("scaler_", "")
+    
+    
+    with col1:
+        st.markdown("")
+        inputedValue = st.number_input(f"\nEnter {label}", step = 0.1, format ="%.1f")
+        data[label] = [inputedValue]
+        
+    with col2:
+        st.markdown(f"#### {label} Parameter Description")
+        st.markdown("Values are written in (%)")
+    
+    return data
+
+for x in range(len(percentCols_variabel)):
+    streamlit_percent_builder(
+        scaler_name= f"scaler_{percentCols_variabel[x]}",
+        data = data
+    )
+    
+
+def streamlit_continous_builder(scaler_name, data):
+    col1, col2 = st.columns(2)
+    module = importlib.import_module("data_preprocessing")
+    encoder = getattr(module, scaler_name)
+    
+    label = scaler_name.replace("scaler_", "")
+    
+    
+    with col1:
+        st.markdown("")
+        inputedValue = st.number_input(f"\nEnter {label}", step = 0.01, format ="%.2f")
+        data[label] = [inputedValue]
+        
+    with col2:
+        st.markdown(f"#### {label} Parameter Description")
+        st.markdown("Gross Domestic Product (GDP)")
+    
+    return data
+
+for x in range(len(continous_variabel)):
+    streamlit_continous_builder(
+        scaler_name= f"scaler_{continous_variabel[x]}",
+        data = data
+    )
+    
+    
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+
+with st.expander("View the Raw Data"):
+    st.dataframe(data=data, width=800, height=10)
+    
+if st.button('Predict'):
+    new_data = input_df_builder(data=data)
+    with st.expander("View the Preprocessed Data"):
+        st.dataframe(data=new_data, width=800, height=10)
+    st.write("# Student performance stats prediction result: {}".format(prediction(new_data)))
