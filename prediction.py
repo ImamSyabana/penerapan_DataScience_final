@@ -2,7 +2,7 @@ import joblib
 import os
 
 rdf_model = joblib.load(os.path.join("models", "rdf_model.joblib"))
-encoder_Status= joblib.load(os.path.join("models", "ncoder_Status.joblib"))
+encoder_Status= joblib.load(os.path.join("models", "encoder_Status.joblib"))
 expected_features = joblib.load(os.path.join("models", "feature_names.joblib"))
 
 def prediction(data):
