@@ -114,7 +114,12 @@ Model Decision Tree yang sudah dilatih digunakan untuk memprediksi dropout siswa
 Secara keseluruhan, kedua model ini memberikan insight yang berharga bagi Jaya Jaya Institut dalam mendeteksi potensi dropout siswa, yang diharapkan dapat digunakan untuk melakukan intervensi dini melalui bimbingan akademik yang tepat. Model ini juga membantu memvisualisasikan hasil melalui dashboard yang terintegrasi dengan Metabase.
 
 ## Conclusion
-Analisis yang dilakukan menunjukkan bahwa siswa dengan performa akademik rendah di awal masa studi berpotensi tinggi untuk dropout. Dengan menggunakan model prediksi yang dibangun berdasarkan data akademik dan faktor lainnya, pihak Jaya Jaya Institut dapat memberikan intervensi dini kepada siswa yang berisiko. Dashboard yang dibuat memungkinkan pihak institusi untuk memonitor performa siswa secara real-time dan mengambil tindakan yang tepat sesuai data yang disajikan.
+Analisis yang dilakukan menunjukkan bahwa siswa yang berstatus dropout dari Jaya Jaya Institute memiliki performa akademik yang menunjukkan adanya pola saat dilihat dari statistik prestasi yang didapat selama belajar di Jaya Jaya Institute. 
+
+Dashboard yang dibuat menggunakan tools metabase mempermudah dalam meneliti hubungan antara beberapa variabel yang berpotensi mempengaruhi keberhasilan mahasiswa lulus dari Jaya Jaya Institute. Variabel-variabel tersebut diantaranya nilai rerata unit yang diampu pada semester 1 dan semester 2 semua mahasiswa, nilai rerata unit semester 1 dan 2 yang berhasil diluluskan semua mahasiswa, nilai rerata ujian masuk dari semua mahasiswa, nilai rata-rata semua unit pada semester 1 dan semester 2, nilai rerata pendidikan sebelumnya dari semua mahasiswa, nilai rerata semua unit semester 1 dan semester 2, dan rerata usia semua mahasiswa pada saat pertama kali terdaftar menjadi mahasiswa Jaya Jaya Institut.
+
+
+rendah di awal masa studi berpotensi tinggi untuk dropout. Dengan menggunakan model prediksi yang dibangun berdasarkan data akademik dan faktor lainnya, pihak Jaya Jaya Institut dapat memberikan intervensi dini kepada siswa yang berisiko. Dashboard yang dibuat memungkinkan pihak institusi untuk memonitor performa siswa secara real-time dan mengambil tindakan yang tepat sesuai data yang disajikan.
 
 Laporan ini memberikan dasar untuk perbaikan strategi pembelajaran dan dukungan akademik di masa depan.
 
@@ -125,5 +130,5 @@ Berdasarkan hasil analisis dan modeling, berikut adalah beberapa rekomendasi act
 Mengimplementasikan program bimbingan akademik khusus bagi siswa yang teridentifikasi memiliki rasio performa akademik rendah di semester awal. Program ini dapat mencakup mentoring, bantuan pengajaran tambahan, dan pemantauan yang lebih dekat oleh tutor.
 
 
-nb: ...
+nb: 
 link streamlit masih dengan bug [https://penerapandatascience-submisifinal.streamlit.app/]
