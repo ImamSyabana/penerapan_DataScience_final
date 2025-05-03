@@ -74,20 +74,30 @@ Librari yang diperlukan dalam project ini diantaranya sebagai berikut.
 Setup environment:
   
 
-1. Akses Google Colab: Membuka Google Colab lewat browser.
-2. Dataset hasil analisis faktor-faktor yang memengaruhi attrition rate menggunakan Google Colab dapat diunggah ke database management tool PostgreSQL menggunakan supabase untuk nantinya bisa digunakan untuk membuat dashboard menggunakan metabase.
+**Mengakses Google Colab**: Google Colab dapat diakses dengan mudah lewat menggunakan alamat https://colab.research.google.com
 
-* Setup Metabase dan Docker 
-1. **Install Docker**: Docker bisa diunduh dari website resminya dan dapat di instal dengan mengikuti langkah-langkah yang ditampilkan.
+**Alur pengolahan dataset**: Dataset yang berisi faktor-faktor yang mungkin memengaruhi performa akademik mahasiswa dapat di preprocessing menggunakan Google Colab dan dapat diunggah ke database management tool PostgreSQL menggunakan supabase supaya bisa digunakan pada saat melakukan bussiness analysist, seperti membuat dashboard menggunakan metabase.
 
-2. **Setup Metabase**: Menggunakan Metabase untuk membuat dashboard yang interaktif dan terhubung ke database. Menyiapkan metabase dengan menggunakan Docker dilakukan dengan perintah docker pull metabase/metabase:v0.46.4 dan jalankan metabase dengan menggunakan perintah docker run -p 3000:3000 --name metabase metabase/metabase
+**Setup Metabase menggunakan Docker:**
 
- * Menghubungkan ke Supabase
+1. **Install Docker Desktop**: Docker diunduh dari [website resminya](https://docs.docker.com/desktop/setup/install/windows-install/). Instalasi dilakukan dengan mengikuti instruksi yang diberikan.
 
-1. **Upload CSV ke Supabase**: Menggunakan Supabase untuk menyimpan data attrition rate yang sudah disiapkan dengan melakukan feature engineering sebelumnya ke data base agar bisa diakses oleh Metabase. Untuk dapat menggunakan supabase perlu disiapkan terlebih dahulu akun user yang akan digunakan untuk mengakses supabase yang mana juga terdapat opsi menggunakan akun GitHub. Selanjutnya projek baru perlu dibuat dengan mendefinisikan nama, organisasi, dan password. Setelah itu didapatkan username dan password untuk projek ini adalah **postgres.uxzwesijexuasxnywyuf** dan **52H9suDMxF5lWrjq**. Password dan username tersebut dibutuhkan saat akan mengirim data hasil feature engineering ke supabase untuk masuk ke databse PostgreSQL.
+2. **Setup Metabase**: Menggunakan Metabase untuk membuat dashboard yang interaktif dan terhubung ke database. Menyiapkan metabase dengan docker image dilakukan dengan perintah docker pull metabase/metabase:latest dan buat container metabase dengan menggunakan perintah docker run -p 3000:3000 --name submisi-final metabase/metabase
+
+**Menghubungkan ke Supabase**
+
+1. **Upload CSV ke Supabase**: Menggunakan Supabase untuk menyimpan data performa akademik siswa yang sudah dipreprocessing sebelumnya ke data base agar bisa diakses oleh Metabase. Untuk dapat menggunakan supabase perlu disiapkan terlebih dahulu akun user yang akan digunakan untuk mengakses supabase yang mana juga terdapat opsi menggunakan akun GitHub. Selanjutnya projek baru perlu dibuat dengan mendefinisikan nama, organisasi, dan password. Setelah itu didapatkan username dan password untuk projek ini adalah **postgres.ofxlsbyunxxyzjtnggya** dan **god4oFR2yPn5KLvn**. Password dan username tersebut dibutuhkan saat akan mengirim data hasil feature engineering ke supabase untuk masuk ke databse PostgreSQL.
    
 2.  **Menghubungkan Metabase dengan Supabase**:
-Untuk dapat mengolah database PostgreSQL yang ada pada Supabase, diperlukan pengaturan pada metabase dengan memberikan informasi database yang sama dengan yang sudah dikirim ke supabase tersebut. Informasi yang perlu dimasukkan meliputi tipe databse, yaitu PostgreSQL, host, port, database name, username, dan password. Username dadn password yang dipilih untuk menggunakan metabase, yaitu **root@mail.com** dan **root123**. 
+Untuk dapat mengolah database PostgreSQL yang ada pada Supabase, diperlukan pengaturan pada metabase dengan memberikan informasi database yang sama dengan yang sudah dikirim ke supabase tersebut. Informasi yang perlu dimasukkan meliputi.
+
+    - tipe databse: PostgreSQL
+    - Display Name: submisiFinal
+    - host: aws-0-ap-southeast-1.pooler.supabase.com
+    - port: 6543
+    - database name: postgres
+    - username: root@mail.com
+    - password: root123
 
 
 ## Business Dashboard
