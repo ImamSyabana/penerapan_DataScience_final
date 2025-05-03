@@ -58,17 +58,21 @@ faktor-faktor yang kemungkinan memengaruhi performa akademik mahasiswa adalah se
 **1. Sumber data:**
 Dataset sudah disediakan dari pihak Jaya Jaya Maju institut sehingga dataset [student's performance](https://drive.google.com/drive/folders/1u2GLYrJxST154AbItZBKriXDrL7dHLSP) dapat diakses untuk dianalisa. Dataset tersebut tersusun setelah mengumpulkan beberapa database dari institusi perguruan tinggi. Database-database tersebut berhubungan dengan data mahasiswa-mahasiswa yang mengikuti program sarjana seperti program studi agronomi, desain, edukasi, perawatan, jurnalis, manajemen, layanan sosial, dan teknologi. dataset berisi catatan informasi masing-masing mahasiswa selama mereka berkuliah, seperti jalur akademik, demografi, faktor sosial ekonomi, dan juga performa akademik mahasiswa pada akhir periode semester pertama dan kedua.
 
-**2. Mempersiapkan environment project:**
+**2. Setup Environment:**
 Memanfaatkan Jupyter Notebook Google Colab untuk dapat menulis dan menjalankan model machine learning atau analisis data secara langsung, memanfaatkan CPU atau GPU yang disediakan secara gratis. Persiapan environment project dengan Google Colabs relatif mudah karena beberapa library yang dibutuhkan sudah terinstal. Untuk library yang belum tersedia di Google Colab, library dapat di-instal dengan perintah pip install.  
 
 Librari yang diperlukan dalam project ini diantaranya sebagai berikut.
-* sqlalchemy: untuk menghubungkan dataframe ke tabel yang ada di database
-* pandas
-* numpy
+* sqlalchemy: untuk menghubungkan dataframe ke tabel yang terdapat pada supabase.
+* pandas: untuk manipulasi dan analisis data
+* numpy: untuk komputasi numerik di Python
+* matplotlib: untuk membuat grafik 2D seperti line plot, bar chart, scatter plot, dll
+* seaborn: untuk visualisasi data statistik.
+* joblib: menyimpan dan memuat objek Python, seperti model rdf, encoder, scaler.
+* scikit-learn: berguna untuk klasifikasi, regresi, klasterisasi, serta alat evaluasi model dan preprocessing data.
 
 
 Setup environment:
-* 
+  
 
 1. Akses Google Colab: Membuka Google Colab lewat browser.
 2. Dataset hasil analisis faktor-faktor yang memengaruhi attrition rate menggunakan Google Colab dapat diunggah ke database management tool PostgreSQL menggunakan supabase untuk nantinya bisa digunakan untuk membuat dashboard menggunakan metabase.
@@ -87,34 +91,43 @@ Untuk dapat mengolah database PostgreSQL yang ada pada Supabase, diperlukan peng
 
 
 ## Business Dashboard
-Business dashboard yang dibuat menggunakan Metabase terhubung dengan database di Supabase. Dashboard ini memberikan informasi yang jelas mengenai performa akademik siswa dan indikator dropout. Salah satu faktor utama yang ditemukan adalah rasio performa akademik pada semester 1 dan 2. Siswa dengan rasio rendah, dihitung dari jumlah unit kurikulum yang diambil (enrolled) dibandingkan dengan yang lulus (approved), cenderung memiliki risiko dropout yang lebih tinggi.
+Business dashboard yang dibuat menggunakan tools Bussiness Intellegence Metabase dan dihubungkan dengan Supabase untuk dapat mengakses dataset. Dashboard ini memberikan informasi yang jelas mengenai performa akademik siswa dan indikator yang menentukan performa akademik mahasiswa. 
+
+Analisis yang dilakukan menunjukkan bahwa siswa yang berstatus dropout dari Jaya Jaya Institute memiliki performa akademik yang menunjukkan adanya pola saat dilihat dari statistik prestasi yang didapat selama belajar di Jaya Jaya Institute. 
+
+Salah satu faktor utama yang ditemukan adalah rasio performa akademik pada semester 1 dan 2. Siswa dengan rasio rendah, dihitung dari jumlah unit kurikulum yang diambil (enrolled) dibandingkan dengan yang lulus (approved), cenderung memiliki risiko dropout yang lebih tinggi.
 
 ## Menjalankan Sistem Machine Learning
-Dalam proyek ini, dilakukan dua pendekatan untuk membangun model prediksi yang mampu mendeteksi potensi dropout siswa di Jaya Jaya Institut. Model ini menggunakan faktor utama yang ditemukan melalui analisis sebelumnya, yaitu rasio performa akademik siswa (academic_performance_ratio) sebagai variabel fitur utama.
 
-Pendekatan menggunakan Decision Tree mampu memodelkan keputusan berdasarkan beberapa cabang logika. Decision tree cocok untuk menganalisis dataset yang memiliki relasi non-linear antar fitur dan label target.
+Dalam proyek ini, dilakukan dua pendekatan untuk membangun model prediksi yang mampu mendeteksi potensi dropout siswa di Jaya Jaya Institut. Model ini menggunakan data yang telah dikumpulkan mengenai data mahasiswa dan keterangan performa akademik mahasiswa.
 
-Parameter yang diuji melalui GridSearchCV untuk decision tree model meliputi:
+Pendekatan menggunakan model machine learning random forest mampu memodelkan keputusan berdasarkan beberapa cabang logika. random forest cocok untuk menganalisis dataset yang memiliki relasi non-linear antar fitur dan label target.
 
-max_features: 'sqrt' dan 'log2',
-max_depth: kedalaman maksimum tree diuji pada nilai 5 hingga 8 
-criterion: 'gini' dan 'entropy', 
+Parameter yang diuji melalui GridSearchCV untuk random forest model meliputi:
 
+* max_features:  [None, 'sqrt', 'log2'],
+* n_estimator: dengan nilai 100, 200, 300.
+* max_depth: kedalaman maksimum tree diuji dengan nilai None, 10, 20. 
+* criterion: 'gini' dan 'entropy', 
+* min_samples_split: dengan nilai 2, 5, dan 10.
+  
 Setelah menemukan parameter terbaik, model Decision Tree dengan:
 
-criterion='entropy'
-max_depth=5
-max_features='sqrt'
+* max_features: 'sqrt',
+* n_estimator: dengan nilai 300,
+* max_depth: None,
+* criterion: 'entropy', 
+* min_samples_split:  nilai 2.
+
 dipilih sebagai model final. Model ini kemudian dilatih pada data training dan disimpan untuk digunakan di masa mendatang.
 
-Prediksi dengan Decision Tree
+**Prediksi dengan Random Forest**
 
-Model Decision Tree yang sudah dilatih digunakan untuk memprediksi dropout siswa pada set data training dan test. Prediksi dilakukan berdasarkan nilai academic_performance_ratio dari setiap siswa. Hasil dari prediksi ini menunjukkan probabilitas seorang siswa berpotensi dropout berdasarkan performa akademik mereka.
+Model Random Forest yang sudah dilatih digunakan untuk mengklasifikasikan status performa siswa pada set data training dan test ke dalam kategori Dropout, Enrolled, atau Graduate. Prediksi dilakukan dengan mempertimbangkan semua variabel yang mungkin berkaitan dengan performa akademik setiap siswa. Hasil dari prediksi ini menunjukkan probabilitas seorang siswa berpotensi dropout berdasarkan performa akademik mereka. Hal tersebut bisa dilakukan karena model random forest akan mengklasifikasikan data mahasiswa dan performa akademik mahasiswa untuk mengklasifikasikan mahasiswa terprediksi berstatus Graduate, Enrolled, atau Dropout.
 
-Secara keseluruhan, kedua model ini memberikan insight yang berharga bagi Jaya Jaya Institut dalam mendeteksi potensi dropout siswa, yang diharapkan dapat digunakan untuk melakukan intervensi dini melalui bimbingan akademik yang tepat. Model ini juga membantu memvisualisasikan hasil melalui dashboard yang terintegrasi dengan Metabase.
+Secara keseluruhan, model ini memberikan insight yang berharga bagi Jaya Jaya Institut dalam mendeteksi potensi dropout siswa, yang diharapkan dapat digunakan untuk menurunkan tingkat dropout rate. Model ini juga membantu memvisualisasikan hasil melalui dashboard yang terintegrasi dengan Metabase.
 
 ## Conclusion
-Analisis yang dilakukan menunjukkan bahwa siswa yang berstatus dropout dari Jaya Jaya Institute memiliki performa akademik yang menunjukkan adanya pola saat dilihat dari statistik prestasi yang didapat selama belajar di Jaya Jaya Institute. 
 
 Dashboard yang dibuat menggunakan tools metabase mempermudah dalam meneliti hubungan antara beberapa variabel yang berpotensi mempengaruhi keberhasilan mahasiswa lulus dari Jaya Jaya Institute. Variabel-variabel tersebut diantaranya nilai rerata unit yang diampu pada semester 1 dan semester 2 semua mahasiswa, nilai rerata unit semester 1 dan 2 yang berhasil diluluskan semua mahasiswa, nilai rerata ujian masuk dari semua mahasiswa, nilai rata-rata semua unit pada semester 1 dan semester 2, nilai rerata pendidikan sebelumnya dari semua mahasiswa, nilai rerata semua unit semester 1 dan semester 2 yang diselesaikan tanpa evaluasi, dan rerata usia semua mahasiswa pada saat pertama kali terdaftar menjadi mahasiswa Jaya Jaya Institut.
 
