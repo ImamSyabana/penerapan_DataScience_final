@@ -116,19 +116,41 @@ Secara keseluruhan, kedua model ini memberikan insight yang berharga bagi Jaya J
 ## Conclusion
 Analisis yang dilakukan menunjukkan bahwa siswa yang berstatus dropout dari Jaya Jaya Institute memiliki performa akademik yang menunjukkan adanya pola saat dilihat dari statistik prestasi yang didapat selama belajar di Jaya Jaya Institute. 
 
-Dashboard yang dibuat menggunakan tools metabase mempermudah dalam meneliti hubungan antara beberapa variabel yang berpotensi mempengaruhi keberhasilan mahasiswa lulus dari Jaya Jaya Institute. Variabel-variabel tersebut diantaranya nilai rerata unit yang diampu pada semester 1 dan semester 2 semua mahasiswa, nilai rerata unit semester 1 dan 2 yang berhasil diluluskan semua mahasiswa, nilai rerata ujian masuk dari semua mahasiswa, nilai rata-rata semua unit pada semester 1 dan semester 2, nilai rerata pendidikan sebelumnya dari semua mahasiswa, nilai rerata semua unit semester 1 dan semester 2, dan rerata usia semua mahasiswa pada saat pertama kali terdaftar menjadi mahasiswa Jaya Jaya Institut.
+Dashboard yang dibuat menggunakan tools metabase mempermudah dalam meneliti hubungan antara beberapa variabel yang berpotensi mempengaruhi keberhasilan mahasiswa lulus dari Jaya Jaya Institute. Variabel-variabel tersebut diantaranya nilai rerata unit yang diampu pada semester 1 dan semester 2 semua mahasiswa, nilai rerata unit semester 1 dan 2 yang berhasil diluluskan semua mahasiswa, nilai rerata ujian masuk dari semua mahasiswa, nilai rata-rata semua unit pada semester 1 dan semester 2, nilai rerata pendidikan sebelumnya dari semua mahasiswa, nilai rerata semua unit semester 1 dan semester 2 yang diselesaikan tanpa evaluasi, dan rerata usia semua mahasiswa pada saat pertama kali terdaftar menjadi mahasiswa Jaya Jaya Institut.
 
+Dari hasil rata-rata nilai rerata unit yang diampu pada semester 1 dan semester 2, didapatkan pola bahwa mahasiswa-mahasiswa yang berhasil lulus dan berstatus Graduate memiliki nilai unit rata-rata di semester 1 dan semester 2 yang lebih besar dari mahasiswa yang berstatus Dropout dan Enrolled. Mahasiswa dengan status Graduate memiliki nilai rerata 6.65 sedangkan mahasiswa dengan status Dropout dan Enrolled hanya di angka 5.8 dan 5.95 saja.
 
-rendah di awal masa studi berpotensi tinggi untuk dropout. Dengan menggunakan model prediksi yang dibangun berdasarkan data akademik dan faktor lainnya, pihak Jaya Jaya Institut dapat memberikan intervensi dini kepada siswa yang berisiko. Dashboard yang dibuat memungkinkan pihak institusi untuk memonitor performa siswa secara real-time dan mengambil tindakan yang tepat sesuai data yang disajikan.
+Pola yang sama juga terjadi pada hasil analisis data yang dilakukan pada variabel  nilai rerata unit semester 1 dan 2 yang berhasil diluluskan mahasiswa, nilai rerata ujian masuk dari semua mahasiswa, nilai rata-rata semua unit pada semester 1 dan semester 2, nilai rerata pendidikan sebelumnya dari semua mahasiswa, nilai rerata semua unit semester 1 dan semester 2 yang diselesaikan tanpa evaluasi. Hasil yang didapatkan mengatakan variabel-variabel tersebut memberikan nilai paling tinggi pada mahasiswa yang berstatus "Graduate", selanjutnya nilai tertinggi kedua selalu dipegang oleh mahasiswa-mahasiswa yang berstatus "Enrolled". Sedangkan mahasiswa-mahasiswa yang berstatus "Dropout" memiliki rerata performa akademik yang paling rendah dibanding mahasiswa berstatus yang lain. Mahasiswa berstatus Dropout menunjukkan nilai rerata yang paling rendah di variabel-variabel yang diteliti. 
 
-Laporan ini memberikan dasar untuk perbaikan strategi pembelajaran dan dukungan akademik di masa depan.
+Seluruh mahasiswa yang berstatus Dropout memiliki nilai rata-rata usia yang tertinggi dibanding mahasiswa golongan yang lain pada saat pertama kali mendaftar Jaya Jaya Institut. Sementara mahasiswa dengan status Graduate memiliki nilai rerata usia yang terendah dibanding mahasiswa golongan Dropout dan Enrolled. Hal ini membuktikan bahwa mahasiswa yang berstatus Graduate kebanyakan masih relatif lebih muda dibandingkan dengan mahasiswa yang berstatus selain Graduate. Mahasiswa dengan status Enrolled memiliki selisih rerata usia yang sedikit berbeda tetapi masih lebih tinggi sedikit dari rerata usia yang dimiliki mahasiswa berstatus Graduate.
+
+Performa akademik yang rendah di awal masa studi berpotensi tinggi menyebabkan mahasiswa untuk dropout. Dengan menggunakan model prediksi random forest yang dibangun berdasarkan data akademik dan faktor lainnya, pihak Jaya Jaya Institut dapat memberikan intervensi dini kepada siswa yang berisiko. Dashboard yang dibuat memungkinkan pihak institusi untuk memonitor performa siswa secara real-time dan mengambil tindakan yang tepat sesuai data yang disajikan.
+
 
 ### Rekomendasi Action Items
+
 Berdasarkan hasil analisis dan modeling, berikut adalah beberapa rekomendasi action items yang dapat dilakukan oleh Jaya Jaya Institut untuk mengurangi angka dropout dan meningkatkan performa akademik siswa:
 
-- Program Bimbingan Akademik Khusus
-Mengimplementasikan program bimbingan akademik khusus bagi siswa yang teridentifikasi memiliki rasio performa akademik rendah di semester awal. Program ini dapat mencakup mentoring, bantuan pengajaran tambahan, dan pemantauan yang lebih dekat oleh tutor.
+- **Peningkatan Layanan Bimbingan Akademik**
+
+Meningkatkan kegiatan pembelajaran  secara keseluruhan supaya lebih efektif menghasilkan performa akademik mahasiswa yang mampu mendapatkan nilai yang lebih tinggi dari rerata nilai yang tergolong mahasiswa berstatus Dropout. 
+
+Menerapkan perlakuan lebih untuk membantu meningkatkan performa akademik khusus bagi siswa yang teridentifikasi memiliki rasio performa akademik rendah di semester awal. Hal ini diharapkan dapat meningkatkan rata-rata nilai rerata unit yang diampu mahasiswa pada semester 1 dan semester 2, nilai rerata unit semester 1 dan 2 yang berhasil diluluskan mahasiswa, nilai rata-rata semua unit pada semester 1 dan semester 2,  nilai rerata semua unit semester 1 dan semester 2 yang diselesaikan tanpa evaluasi. Conoth program yang dapat dicoba mencakup mentoring, bantuan pengajaran tambahan, dan pemantauan yang lebih dekat oleh dosen.
+
+- **Meningkatkan ambang batas minimum yang menjadi sarat pendaftaran mahasiswa Jaya Jaya Institute**
+
+Data yang divisualisaikan oleh dashboard mengatakan bahwa nilai rerata ujian masuk dan nilai rerata pendidikan sebelumnya dari semua mahasiswa yang berstatus "Dropout" merupakan yang paling rendah dibandingkan dengan yang dimiliki oleh mahasiswa berstatus "Enrolled" dan "Graduate". Hal ini mengindikasikan bahwa adanya kemungkinan pengaruh antara performa mahasiswa Dropout dengan nilai ujian masuk dan nilai pendidikan mahasiswa sebelumnya. Dengan cara menseleksi lebih ketat calon mahasiswa yang memilii nilai yang kurang diharapkan mampu menurunkan tingkat dropout rate Jaya Jaya Institut.
+
+- **Memberikan perlakuan khusus untuk mahasiswa dengan rerata usia tinggi**
+
+Pola mahasiswa yang berstatus dropout juga ditunjukkan dari sebaran rerata usianya pada saat mendaftar ke Jaya Jaya Institute. Mahasiswa yang tergolong berstatus dropout memiliki rerata usia yang lebih tinggi pada saat pertama kali mendaftar dibandingkan dengan golongan mahasiswa berstatus Enrolled dan Graduate. 
+
+Hal yang bisa dilakukan untuk menurunkan dropout rate Jaya Jaya Institute yang pertama adalah dengan menurunkan batas maksimal usia yang diperbolehkan untuk mendaftar ke Jaya Jaya Institute.
+
+Kedua, terdapat kemungkinan mahasiswa yang terdaftar Dropout dan memiliki usia tinggi karena merupakan golongan karyawan yang kuliah sekaligus bekerja. Untuk golongan tersebut dapat diberikan keringanan dengan diperbolehkannya mengampu “kelas malam” atau blended learning.
 
 
-nb: 
-link streamlit masih dengan bug [https://penerapandatascience-submisifinal.streamlit.app/]
+link streamlit deployment aplikasi 
+Student Drop Rate Predictor App: 
+
+ [https://penerapandatascience-submisifinal.streamlit.app/]
